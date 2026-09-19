@@ -48,13 +48,17 @@ background:linear-gradient(90deg,var(--gold) 0%,var(--gold-2) 50%,var(--gold) 10
 padding:clamp(2rem,4.5vw,3.5rem) clamp(1.25rem,3vw,2rem)
        clamp(1.75rem,3.5vw,2.5rem);
 display:grid;grid-template-columns:auto 1fr;
-gap:clamp(1.25rem,3vw,2.5rem);align-items:center}
-.top-logo{width:clamp(120px,16vw,180px);flex-shrink:0;
-background:#fff;border-radius:6px;padding:.5rem;
+gap:clamp(1.5rem,3vw,2.5rem);align-items:center}
+.top-media{display:flex;gap:.75rem;align-items:stretch;flex-shrink:0;
+height:clamp(180px,22vw,260px)}
+.top-photo{height:100%;background:#fff;border-radius:6px;padding:.4rem;
 border:2px solid var(--gold);
 box-shadow:0 10px 28px rgba(0,0,0,.35),
-           0 0 0 6px rgba(232,185,74,.12)}
-.top-logo img{width:100%;height:auto;display:block;border-radius:2px}
+           0 0 0 6px rgba(232,185,74,.12);
+display:flex;align-items:center;justify-content:center;
+overflow:hidden}
+.top-photo img{width:auto;height:100%;max-width:100%;object-fit:contain;
+display:block;border-radius:2px}
 .top-text{min-width:0}
 .brand{font-family:var(--font-sans);font-weight:700;font-size:.7rem;
 letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);
@@ -230,6 +234,21 @@ box-shadow:0 6px 22px rgba(90,10,20,.35);z-index:30}
 .topbtn.show{opacity:1;visibility:visible;transform:translateY(0)}
 .topbtn.show:hover{transform:translateY(-2px)}
 
+/* LOGO NO FINAL */
+.section-logo-final{text-align:center;border-bottom:none;
+padding:clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem)}
+.logo-final{max-width:520px;margin:0 auto}
+.logo-final img{width:100%;height:auto;border-radius:6px;
+box-shadow:0 24px 60px rgba(90,10,20,.25),
+           0 0 0 1px rgba(201,146,46,.35);
+transition:transform .4s ease,box-shadow .4s ease}
+.logo-final img:hover{transform:translateY(-4px);
+box-shadow:0 32px 70px rgba(90,10,20,.32),
+           0 0 0 1px rgba(201,146,46,.5)}
+.logo-final-caption{font-family:var(--font-sans);font-size:.85rem;
+color:var(--muted);font-style:italic;margin-top:1.5rem;
+letter-spacing:.05em}
+
 @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){
 body{font-size:1rem}
@@ -237,8 +256,8 @@ body{font-size:1rem}
 .nominata{columns:1}
 .article{font-size:1rem}
 .topin{padding:1.5rem 1.15rem 1.75rem;
-grid-template-columns:1fr;gap:1.15rem;justify-items:center;text-align:center}
-.top-logo{width:clamp(100px,30vw,140px)}
+grid-template-columns:1fr;gap:1.25rem;justify-items:center;text-align:center}
+.top-media{gap:.6rem;justify-content:center;height:clamp(140px,38vw,200px)}
 .top-text{width:100%}
 .brand{font-size:.58rem;letter-spacing:.18em;margin-bottom:.9rem}
 .brand::before{width:20px;margin-right:.55rem}
@@ -258,6 +277,8 @@ main{padding:0 1.15rem 2rem}
 .back-top{font-size:.7rem;padding:.55rem 1rem}
 .mail-btn{font-size:.75rem;padding:.75rem 1.2rem}
 .mail-addr{font-size:.9rem}
+.logo-final{max-width:100%}
+.logo-final-caption{font-size:.78rem}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -278,8 +299,13 @@ body{background:#fff}
 
 <header class="top" id="inicio">
   <div class="topin">
-    <div class="top-logo">
-      <img src="foto-reuniao.jpg" alt="Logomarca da Oposição dos Vigilantes de Pernambuco — VOTE CHAPA 2 — Pernambuco, 1993">
+    <div class="top-media">
+      <div class="top-photo">
+        <img src="santos.jpg" alt="Retrato do camarada Santos, vigilante de Pernambuco — com a camisa da Chapa 2">
+      </div>
+      <div class="top-photo">
+        <img src="foto-reuniao.jpg" alt="Logomarca da Oposição dos Vigilantes de Pernambuco — VOTE CHAPA 2 — Pernambuco, 1993">
+      </div>
     </div>
     <div class="top-text">
       <div class="brand">Arquivo de memória • Vigilantes de Pernambuco</div>
@@ -440,7 +466,7 @@ body{background:#fff}
         <li>Reuniões mensais da diretoria abertas aos vigilantes;</li>
         <li>Microsistema de computação para agilizar atendimento;</li>
         <li>Gráfica interna para jornal e panfletos;</li>
-        <li>Fim da mordomia, deixando carros do sindicato na garagem nos fins de semana;</li> 
+        <li>Fim da mordomia, deixando carros do sindicato na garagem nos fins de semana;</li>
         <li>Direção colegiada.</li>
       </ul></div>
     </div>
@@ -570,6 +596,16 @@ body{background:#fff}
         O arquivo informa: “Documentos digitalizando por Gilson Silva e o Gemini descreveu o texto.”<br><br>
         Paulista, 19 de setembro de 2026.
       </div>
+    </div>
+    <button type="button" class="back-top" data-top>Voltar ao início</button>
+  </section>
+
+  <section class="section section-logo-final">
+    <div class="logo-final">
+      <img src="foto-reuniao.png" alt="Logomarca colorida da Oposição dos Vigilantes de Pernambuco — VOTE CHAPA 2 — 1993">
+      <p class="logo-final-caption">
+        Oposição dos Vigilantes de Pernambuco · 1993
+      </p>
     </div>
     <button type="button" class="back-top" data-top>Voltar ao início</button>
   </section>
