@@ -30,7 +30,7 @@ text-decoration:none}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
 /* ============================================================
-   CABEÇALHO
+   CABEÇALHO — logo no topo, título, duas fotos
    ============================================================ */
 .top{background:var(--dark);color:#fff;border-bottom:4px solid var(--gold);
 position:relative;overflow:hidden}
@@ -39,45 +39,63 @@ background-image:
 radial-gradient(circle at 15% 20%,rgba(216,170,53,.08) 0%,transparent 45%),
 radial-gradient(circle at 85% 80%,rgba(178,30,43,.15) 0%,transparent 50%)}
 .topin{max-width:var(--max);margin:0 auto;
-padding:clamp(1.75rem,4.5vw,3.5rem) clamp(1rem,3vw,2rem);
-position:relative;z-index:1;overflow:hidden}
-.brand{font-family:var(--font-sans);font-weight:700;font-size:.68rem;
-letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
-display:inline-flex;align-items:center;gap:.65rem;margin-bottom:1rem;
-line-height:1.5}
-.brand::before{content:"";display:inline-block;width:24px;height:2px;
-background:var(--gold);flex-shrink:0}
-.top h1{font-size:clamp(1.75rem,5vw,4rem);line-height:1.02;margin:0;
+padding:clamp(1.5rem,4vw,2.5rem) clamp(1rem,3vw,2rem);
+position:relative;z-index:1;overflow:hidden;
+display:flex;flex-direction:column;align-items:center;text-align:center}
+
+/* Logo no topo */
+.top-logo{width:clamp(120px,26vw,180px);height:auto;
+background:#fff;border-radius:8px;padding:.5rem;
+border:2px solid var(--gold);
+box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 0 6px rgba(216,170,53,.08);
+margin-bottom:1.25rem;
+cursor:zoom-in;transition:transform .3s ease,box-shadow .3s ease}
+.top-logo:hover,.top-logo:focus-visible{
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 0 8px rgba(216,170,53,.12)}
+.top-logo img{width:100%;height:auto;display:block}
+
+.brand{font-family:var(--font-sans);font-weight:700;font-size:.66rem;
+letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+display:inline-flex;align-items:center;gap:.6rem;margin-bottom:.85rem;
+line-height:1.5;justify-content:center}
+.brand::before,.brand::after{content:"";display:inline-block;
+width:22px;height:2px;background:var(--gold);flex-shrink:0}
+
+.top h1{font-size:clamp(1.85rem,6vw,4rem);line-height:1.02;margin:0;
 font-weight:700;letter-spacing:-.015em;text-wrap:balance;max-width:100%;
 word-wrap:break-word;overflow-wrap:break-word}
 .top h1 .accent{color:var(--gold);font-style:italic}
+
 .top-lead{margin-top:1rem;color:#cfc5b8;font-style:italic;
 font-size:clamp(.95rem,1.5vw,1.08rem);max-width:52ch;line-height:1.6}
 .top-lead strong{color:#fff;font-style:normal;font-weight:700}
-.top-meta{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;
-font-family:var(--font-sans);font-size:.68rem;font-weight:700;
-letter-spacing:.1em;text-transform:uppercase;color:#a9a29a}
-.top-meta span{display:inline-flex;align-items:center}
-.top-meta span:not(:last-child)::after{content:"•";color:var(--gold);
-margin-left:.8rem;opacity:.7}
 
-/* MINI-GALERIA no cabeçalho */
-.top-thumbs{margin-top:1.75rem;display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:.75rem;max-width:560px}
-.top-thumb{margin:0;background:rgba(216,170,53,.06);
-border:1px solid rgba(216,170,53,.4);border-radius:6px;
-overflow:hidden;cursor:zoom-in;padding:0;
-transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-line-height:0}
-.top-thumb:hover,.top-thumb:focus-visible{
-transform:translateY(-3px);border-color:var(--gold);
-box-shadow:0 12px 30px rgba(0,0,0,.35)}
-.top-thumb img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
-filter:sepia(.15) contrast(1.02);
+.top-meta{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.4rem .7rem;
+font-family:var(--font-sans);font-size:.66rem;font-weight:700;
+letter-spacing:.1em;text-transform:uppercase;
+justify-content:center}
+.top-meta span{display:inline-flex;align-items:center;
+background:rgba(216,170,53,.12);
+border:1px solid rgba(216,170,53,.35);
+padding:.3rem .7rem;border-radius:999px;color:#d6cbb8}
+
+/* Duas fotos no cabeçalho */
+.top-photos{margin-top:1.75rem;display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:1rem;width:100%;max-width:760px}
+.top-photo{margin:0;background:#fff;border:1px solid rgba(216,170,53,.4);
+border-radius:8px;overflow:hidden;padding:0;cursor:zoom-in;
+line-height:0;box-shadow:0 10px 28px rgba(0,0,0,.25);
+transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.top-photo:hover,.top-photo:focus-visible{
+transform:translateY(-4px);border-color:var(--gold);
+box-shadow:0 20px 45px rgba(0,0,0,.4)}
+.top-photo img{width:100%;height:auto;max-height:340px;
+object-fit:contain;background:#fff;
+filter:sepia(.1) contrast(1.03);
 transition:filter .3s ease}
-.top-thumb:hover img{filter:sepia(0) contrast(1.08)}
-.top-thumb-label{display:none}
+.top-photo:hover img{filter:sepia(0) contrast(1.08)}
 
 /* ============================================================
    NAVEGAÇÃO
@@ -86,8 +104,7 @@ transition:filter .3s ease}
 background:rgba(251,247,239,.94);
 -webkit-backdrop-filter:saturate(180%) blur(12px);
 backdrop-filter:saturate(180%) blur(12px);
-border-bottom:1px solid var(--line);
-box-shadow:0 1px 0 rgba(0,0,0,.02)}
+border-bottom:1px solid var(--line)}
 .navin{max-width:var(--max);margin:0 auto;
 padding:.6rem clamp(1rem,2.5vw,1.5rem);display:flex;gap:.5rem;
 overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
@@ -223,18 +240,16 @@ body{font-size:1rem}
 .grid{grid-template-columns:1fr}
 .nominata{columns:1}
 .article{font-size:1rem}
-.topin{padding:1.35rem 1rem 1.5rem}
-.brand{font-size:.6rem;letter-spacing:.14em;margin-bottom:.75rem;
-line-height:1.55}
-.brand::before{display:none}
-.top h1{font-size:clamp(1.6rem,7.5vw,2.1rem);line-height:1.08}
-.top-lead{font-size:.92rem;margin-top:.75rem}
-.top-meta{margin-top:1rem;font-size:.6rem;gap:.3rem .55rem}
-.top-meta span:not(:last-child)::after{display:none}
-.top-meta span{background:rgba(216,170,53,.12);
-border:1px solid rgba(216,170,53,.35);padding:.25rem .55rem;
-border-radius:999px}
-.top-thumbs{margin-top:1.25rem;gap:.5rem;max-width:100%}
+.topin{padding:1.25rem 1rem 1.5rem}
+.top-logo{width:clamp(100px,32vw,140px);margin-bottom:1rem;padding:.4rem}
+.brand{font-size:.58rem;letter-spacing:.14em;margin-bottom:.65rem}
+.brand::before,.brand::after{width:16px}
+.top h1{font-size:clamp(1.55rem,7.5vw,2.1rem);line-height:1.08}
+.top-lead{font-size:.9rem;margin-top:.7rem}
+.top-meta{margin-top:.9rem;font-size:.58rem;gap:.3rem .5rem}
+.top-meta span{padding:.22rem .55rem}
+.top-photos{margin-top:1.25rem;gap:.6rem;max-width:100%}
+.top-photo img{max-height:220px}
 .gallery{grid-template-columns:1fr}
 .gallery-trigger{min-height:180px}
 .lightbox{padding:1rem}
@@ -263,8 +278,16 @@ body{background:#fff}
 
 <header class="top">
   <div class="topin">
+
+    <!-- Logo no topo, centralizada -->
+    <button type="button" class="top-logo gallery-trigger" aria-label="Ampliar: Logomarca da Oposição dos Vigilantes">
+      <img src="foto-reuniao.jpg" alt="Logomarca da Oposição dos Vigilantes de Pernambuco — VOTE CHAPA 2, 1993">
+    </button>
+
     <div class="brand">Arquivo de memória • Vigilantes de Pernambuco</div>
+
     <h1>Companheiro Santos,<br><span class="accent">presente!</span></h1>
+
     <p class="top-lead">Memórias da garupa veloz da utopia em Recife — por <strong>Gilson Silva</strong></p>
 
     <div class="top-meta">
@@ -273,17 +296,16 @@ body{background:#fff}
       <span>Publicado em 19 set 2026</span>
     </div>
 
-    <div class="top-thumbs" aria-label="Prévia das fotos da galeria">
-      <button type="button" class="top-thumb gallery-trigger" aria-label="Ampliar: Grupo da Oposição dos Vigilantes">
-        <img src="foto-garupa.jpg" alt="Grupo da Oposição dos Vigilantes com os punhos erguidos">
+    <!-- Duas fotos embaixo -->
+    <div class="top-photos">
+      <button type="button" class="top-photo gallery-trigger" aria-label="Ampliar: Grupo da Oposição dos Vigilantes">
+        <img src="foto-garupa.jpg" alt="Grupo da Oposição dos Vigilantes de Pernambuco com os punhos erguidos — 1993">
       </button>
-      <button type="button" class="top-thumb gallery-trigger" aria-label="Ampliar: Grupo da Oposição (versão restaurada)">
-        <img src="foto-panfleto.jpg" alt="Grupo da Oposição — versão restaurada por IA">
-      </button>
-      <button type="button" class="top-thumb gallery-trigger" aria-label="Ampliar: Logomarca da Oposição dos Vigilantes">
-        <img src="foto-reuniao.jpg" alt="Logomarca da Oposição dos Vigilantes — VOTE CHAPA 2">
+      <button type="button" class="top-photo gallery-trigger" aria-label="Ampliar: Grupo da Oposição — versão restaurada">
+        <img src="foto-panfleto.jpg" alt="Grupo da Oposição dos Vigilantes — versão restaurada por IA">
       </button>
     </div>
+
   </div>
 </header>
 
@@ -455,4 +477,140 @@ body{background:#fff}
       <p>Geraldo Alves da Silva — Dir. de Finanças (Spev. Norte)</p>
       <p>José Risonildo Rodrigues — Dir. Comunicação Social e Imprensa (Nordeste)</p>
       <p>Jailton Vieira da Silva — Dir. de Património (Selen)</p>
-      <p>Grimauro Barbosa da Silva —
+      <p>Grimauro Barbosa da Silva — Dir. de Assuntos Sindicais (Nordeste)</p>
+      <p><strong>Diretoria Adjunta:</strong> Jorgival R. Xavier; Noel Amâncio Soares; Valmir Ferreira dos Santos; Cleonildo Souza Siqueira; Sérgio A. dos Santos; Edmilson F. da Silva; Romualdo da S. Gonçalves; Grivaldo U. Leite; Valdir Luiz da Silva; Joselias A. da Silva.</p>
+      <p><strong>Suplentes:</strong> Walter Marcolino da Silva; Elias Costa dos Santos; Giovanne Lúcio Gomes; Fernando C. de Oliveira; Marcelo M. do Rego Barros; Eraldo Hélio de Santana; Djalma Gomes da Silva; Djalma S. de Freitas; Manoel B. de S. Sobrinho; Hugo Santos dos Prazeres; José Fernando de Carvalho; Isaac José Costa; José Raimundo de, Filho; Otávio Félix F. Neto; José Gomes Nogueira; Jairo da Silva Lauro; Jamesson J. dos Santos.</p>
+      <p><strong>Representantes da Federação:</strong> Marconi Cardoso Lins; José António Tenório. Suplentes: Edesio José da Silva; Severino D. dos Santos Filho.</p>
+      <p><strong>Conselho Fiscal:</strong> Severino Lourenço Alves; Gilson Xavier de Oliveira; Sandoval Francisco Chaves. Suplentes: Edvaldo dos Anjos; Lupércio da Silva; Josias Lopes Pereira.</p>
+    </div>
+  </section>
+
+  <section class="section" id="apoios">
+    <h2>Sindicatos e sindicalistas que apoiam</h2>
+    <p class="lead">Lista registrada no documento</p>
+    <div class="paper">
+      <div class="grid">
+        <div><ul>
+          <li>CUT – Central Única dos Trabalhadores</li>
+          <li>SINTEPE</li>
+          <li>SINDBORRACHA</li>
+          <li>SINDPD</li>
+          <li>STR Petrolândia</li>
+          <li>STR Surubim</li>
+          <li>Sindicato dos Comerciários de Caruaru</li>
+          <li>CINDSEP</li>
+          <li>SINDSEPPE</li>
+          <li>SINTTEL</li>
+          <li>Sindicato dos Gráficos</li>
+          <li>STI do Açúcar</li>
+        </ul></div>
+        <div><ul>
+          <li>Sindicato dos Bancários</li>
+          <li>Sindicato dos Ferroviários</li>
+          <li>Sindicato dos Vigilantes do Distrito Federal</li>
+          <li>Sindicato dos Vigilantes da Bahia</li>
+          <li>SINPRO</li>
+          <li>Sindicato dos Trabalhadores nos Correios</li>
+          <li>STR Serra Talhada</li>
+          <li>STR Itapetim</li>
+          <li>STR Ouricuri</li>
+          <li>SISEPE</li>
+          <li>Sindicato dos Jornalistas</li>
+          <li>SINDSPREV</li>
+          <li>Sindicato dos Aeroviários</li>
+          <li>Sindicato dos Radialistas</li>
+          <li>Sindicato da Construção Civil de Jaboatão</li>
+          <li>Sindicato dos Bancários de Caruaru</li>
+          <li>Chico Vigilante – Deputado Federal</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Registro do documento</h2>
+    <div class="paper">
+      <p><strong>Comando Geral:</strong> Rua do Príncipe, 106 – SINTEPE</p>
+      <p><strong>Telefones registrados:</strong> 222-2533 / 231-1396</p>
+      <p><strong>Reunião:</strong> todos os dias às 18 horas — conforme o material.</p>
+      <div class="notice">Este site apresenta o material como arquivo histórico. As afirmações e avaliações contidas no panfleto pertencem aos autores e ao contexto de sua época; esta página não as apresenta como fatos independentemente verificados.</div>
+      <div class="source">
+        Documento enviado por Gilson Silva.<br>
+        O arquivo informa: “Documentos digitalizando por Gilson Silva e o Gemini descreveu o texto.”<br><br>
+        Paulista, 19 de setembro de 2026.
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <strong>Companheiro Santos, presente!</strong>
+  <small>Arquivo digital de memória • conteúdo baseado no documento enviado por Gilson Silva</small>
+</footer>
+
+<button class="topbtn" id="top" aria-label="Voltar ao topo">↑</button>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagem" hidden>
+  <button class="lightbox-close" aria-label="Fechar visualizador">×</button>
+  <img src="" alt="" class="lightbox-img">
+</div>
+
+<script>
+/* Botão topo */
+const b = document.getElementById('top');
+window.addEventListener('scroll', () => {
+  b.classList.toggle('show', scrollY > 500);
+});
+b.onclick = () => scrollTo({top:0,behavior:'smooth'});
+
+/* ============================================================
+   MENU — rolagem suave manual (funciona em qualquer celular)
+   ============================================================ */
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    const id = link.getAttribute('href');
+    if (!id || !id.startsWith('#')) return;
+    const alvo = document.querySelector(id);
+    if (!alvo) return;
+    e.preventDefault();
+    const navH = document.querySelector('.nav')?.offsetHeight || 60;
+    const topo = alvo.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({ top: topo, behavior: 'smooth' });
+    history.replaceState(null, '', id);
+  });
+});
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+const lightbox = document.getElementById('lightbox');
+const lbImg = lightbox.querySelector('.lightbox-img');
+const lbClose = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.gallery-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const img = btn.querySelector('img');
+    lbImg.src = img.src;
+    lbImg.alt = img.alt || '';
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  });
+});
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  document.body.style.overflow = '';
+}
+lbClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+});
+</script>
+
+</body>
+</html>
