@@ -1,347 +1,439 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Companheiro Santos, uma história de luta</title>
-    <style>
-        :root {
-            --vermelho-principal: #cc0000;
-            --vermelho-escuro: #4a0000;
-            --amarelo-ouro: #ffcc00;
-            --fundo-pagina: #f8f9fa;
-            --branco: #ffffff;
-            --texto-escuro: #111111;
-            --texto-mutado: #495057;
-            --borda-suave: #e9ecef;
-            --sombra-card: 0 4px 12px rgba(0,0,0,0.05);
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Companheiro Santos, presente! — memória da oposição dos vigilantes de Pernambuco.">
+<title>Companheiro Santos, presente! | Memória dos Vigilantes</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--red:#8f111b;--red-light:#b21e2b;--gold:#d8aa35;--ink:#201c19;
+--muted:#6f6861;--paper:#fbf7ef;--paper-2:#f2eadc;--line:#d8cbb7;
+--dark:#191615;--max:1120px;
+--font-serif:Georgia,"Times New Roman",serif;
+--font-sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+--shadow-sm:0 2px 8px rgba(50,35,20,.06);
+--shadow-md:0 10px 30px rgba(50,35,20,.08);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:var(--font-serif);font-size:1.0625rem;line-height:1.72;
+-webkit-font-smoothing:antialiased;overflow-x:hidden;max-width:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:#f0d98a;color:var(--ink)}
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--red);color:#fff;
+padding:.75rem 1.25rem;z-index:999;font-family:var(--font-sans);font-weight:700;
+text-decoration:none}
+.skip-link:focus{left:0}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-        /* CONFIGURAÇÃO INTERNA CONTRA VAZAMENTOS DE TELA */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-        }
+/* ==== CABEÇALHO ==== */
+.top{background:var(--dark);color:#fff;border-bottom:4px solid var(--gold);
+position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;inset:0;pointer-events:none;
+background-image:
+radial-gradient(circle at 15% 20%,rgba(216,170,53,.08) 0%,transparent 45%),
+radial-gradient(circle at 85% 80%,rgba(178,30,43,.15) 0%,transparent 50%)}
+.topin{max-width:var(--max);margin:0 auto;
+padding:clamp(1.5rem,4vw,3rem) clamp(1rem,3vw,2rem);
+position:relative;z-index:1;overflow:hidden}
+.brand{font-family:var(--font-sans);font-weight:700;font-size:.68rem;
+letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
+display:inline-flex;align-items:center;gap:.65rem;margin-bottom:1rem;
+line-height:1.5}
+.brand::before{content:"";display:inline-block;width:24px;height:2px;
+background:var(--gold);flex-shrink:0}
+.top h1{font-size:clamp(1.75rem,5vw,4rem);line-height:1.02;margin:0;
+font-weight:700;letter-spacing:-.015em;text-wrap:balance;max-width:100%;
+word-wrap:break-word;overflow-wrap:break-word}
+.top h1 .accent{color:var(--gold);font-style:italic}
+.top-lead{margin-top:1rem;color:#cfc5b8;font-style:italic;
+font-size:clamp(.95rem,1.5vw,1.08rem);max-width:52ch;line-height:1.6}
+.top-lead strong{color:#fff;font-style:normal;font-weight:700}
+.top-meta{margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;
+font-family:var(--font-sans);font-size:.68rem;font-weight:700;
+letter-spacing:.1em;text-transform:uppercase;color:#a9a29a}
+.top-meta span{display:inline-flex;align-items:center}
+.top-meta span:not(:last-child)::after{content:"•";color:var(--gold);
+margin-left:.8rem;opacity:.7}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* ==== NAVEGAÇÃO ==== */
+.nav{position:sticky;top:0;z-index:20;
+background:rgba(251,247,239,.92);
+-webkit-backdrop-filter:saturate(180%) blur(12px);
+backdrop-filter:saturate(180%) blur(12px);
+border-bottom:1px solid var(--line)}
+.navin{max-width:var(--max);margin:0 auto;
+padding:.6rem clamp(1rem,2.5vw,1.5rem);display:flex;gap:.5rem;
+overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.navin::-webkit-scrollbar{display:none}
+.nav a{font-family:var(--font-sans);font-weight:700;font-size:.68rem;
+text-decoration:none;text-transform:uppercase;letter-spacing:.08em;
+padding:.55rem .85rem;border:1px solid var(--line);border-radius:4px;
+white-space:nowrap;background:#fff;
+transition:background .2s,color .2s,border-color .2s,transform .2s}
+.nav a:hover,.nav a:focus-visible{background:var(--red);color:#fff;
+border-color:var(--red);transform:translateY(-1px)}
 
-        body {
-            background-color: var(--fundo-pagina);
-            color: var(--texto-escuro);
-            line-height: 1.6;
-            font-size: 1rem;
-            max-width: 100%;
-            overflow-x: hidden;
-        }
+/* ==== CONTEÚDO ==== */
+main{max-width:var(--max);margin:0 auto;
+padding:clamp(1.75rem,3.5vw,2.5rem) clamp(1.15rem,3vw,1.5rem) 3.5rem}
+.section{padding:clamp(2rem,4.5vw,3.5rem) 0;
+border-bottom:1px solid var(--line);scroll-margin-top:4rem}
+.section:last-of-type{border-bottom:none}
+.section h2{font-size:clamp(1.5rem,2.8vw,2.05rem);color:var(--red);
+line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.section .lead{color:var(--muted);font-style:italic;margin:.35rem 0 1.5rem;
+font-size:1.02rem}
+.article{max-width:66ch;font-size:1.08rem}
+.article p{margin-bottom:1.1em}
+.article p:last-child{margin-bottom:0}
+.article strong{color:var(--red);font-weight:700}
+.pullquote{margin:2rem 0;padding:1.5rem 1.75rem;border-top:4px solid var(--gold);
+border-bottom:1px solid var(--line);
+font-size:clamp(1.2rem,2.3vw,1.5rem);line-height:1.35;font-style:italic;
+color:var(--red);background:linear-gradient(180deg,rgba(216,170,53,.06),transparent)}
+.pullquote small{display:block;margin-top:.75rem;font-family:var(--font-sans);
+font-weight:600;font-size:.68rem;color:var(--muted);font-style:normal;
+text-transform:uppercase;letter-spacing:.1em}
+.paper{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-md);
+padding:clamp(1.35rem,3.5vw,2.5rem);margin-top:1.25rem;border-radius:6px}
+.paper h3{font-size:1.3rem;margin-bottom:.8rem;color:var(--red);line-height:1.25}
+.paper h4{font-family:var(--font-sans);font-weight:800;font-size:.76rem;
+text-transform:uppercase;letter-spacing:.1em;color:var(--red);
+border-top:1px solid var(--line);padding-top:1.15rem;margin-top:1.5rem;
+margin-bottom:.65rem}
+.paper p{margin-bottom:.8rem}
+.paper ul{margin:.5rem 0 0;padding-left:1.3rem}
+.paper li{margin:.4rem 0;padding-left:.2rem}
+.paper li::marker{color:var(--gold);font-weight:700}
+.notice{border-left:5px solid var(--gold);background:#f8f0df;
+padding:1rem 1.25rem;margin:1.25rem 0;border-radius:0 4px 4px 0;
+font-size:.95rem;color:#4a423a}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.box{background:#fff;border:1px solid var(--line);padding:1.25rem 1.35rem;
+border-radius:6px;transition:box-shadow .25s,transform .25s}
+.box:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.box h3{margin-bottom:.65rem;color:var(--red);font-size:1rem;
+font-family:var(--font-sans);font-weight:800;text-transform:uppercase;
+letter-spacing:.04em;border-bottom:2px solid var(--gold);
+padding-bottom:.45rem;display:inline-block}
+.nominata{columns:2;column-gap:2.25rem}
+.nominata p{break-inside:avoid;margin-bottom:.45rem;font-size:.96rem;
+line-height:1.55}
+.nominata strong{color:var(--red)}
+.source{font-family:var(--font-sans);font-size:.76rem;color:var(--muted);
+border-top:1px solid var(--line);margin-top:1.75rem;padding-top:1rem;
+line-height:1.7}
 
-        /* HEADER EDITORIAL PROFISSIONAL */
-        .topo-editorial {
-            background: linear-gradient(135deg, var(--vermelho-escuro) 0%, var(--vermelho-principal) 100%);
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 5px solid var(--amarelo-ouro);
-        }
+/* ==== GALERIA ==== */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;
+margin-top:1.25rem}
+.gallery-item{margin:0;background:#fff;border:1px solid var(--line);
+border-radius:6px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.gallery-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.gallery-trigger{display:block;width:100%;padding:0;border:0;
+background:none;cursor:zoom-in;line-height:0}
+.gallery-trigger img{width:100%;aspect-ratio:4/3;object-fit:cover;
+background:linear-gradient(135deg,#f2eadc 0%,#e8dcc4 100%);
+filter:sepia(.18) contrast(1.03);
+transition:filter .4s,transform .5s}
+.gallery-item:hover img{filter:sepia(0) contrast(1.08);transform:scale(1.03)}
+.gallery-item figcaption{padding:.8rem .95rem .95rem;
+font-family:var(--font-sans);font-size:.76rem;line-height:1.55;
+color:var(--muted)}
+.gallery-item figcaption strong{display:block;color:var(--red);
+font-size:.8rem;margin-bottom:.2rem;letter-spacing:.02em}
 
-        .topo-editorial h1 {
-            color: var(--branco);
-            font-size: 1.5rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: -0.3px;
-            line-height: 1.3;
-        }
+/* ==== LIGHTBOX ==== */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(15,12,10,.94);
+display:grid;place-items:center;padding:2rem;
+-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+animation:lb-in .25s ease}
+.lightbox[hidden]{display:none}
+@keyframes lb-in{from{opacity:0}to{opacity:1}}
+.lightbox-img{max-width:min(92vw,1100px);max-height:88vh;width:auto;height:auto;
+border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.6);
+border:1px solid rgba(216,170,53,.4)}
+.lightbox-close{position:absolute;top:1.25rem;right:1.25rem;width:44px;height:44px;
+border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.4);color:#fff;
+font-size:1.5rem;line-height:1;border-radius:50%;cursor:pointer;
+display:grid;place-items:center;transition:background .2s,transform .2s}
+.lightbox-close:hover{background:var(--red);transform:rotate(90deg)}
 
-        /* BARRA DE MENU SUPERIOR ROBUSTA (FUNCIONAMENTO GARANTIDO) */
-        .menu-navegacao-topo {
-            background-color: var(--branco);
-            border-bottom: 1px solid var(--borda-suave);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 0.6rem 0.4rem;
-        }
+/* ==== RODAPÉ ==== */
+.footer{background:var(--dark);color:#ddd;padding:2rem 1.25rem;text-align:center;
+border-top:4px solid var(--gold)}
+.footer strong{color:#fff;font-size:1.1rem;display:block;margin-bottom:.4rem}
+.footer small{color:#a9a29a;font-family:var(--font-sans);font-size:.72rem;
+letter-spacing:.03em;line-height:1.6;display:block;max-width:44ch;margin:0 auto}
 
-        .menu-grid-botoes {
-            max-width: 750px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.3rem;
-        }
+/* ==== BOTÃO TOPO ==== */
+.topbtn{position:fixed;right:1.1rem;bottom:1.1rem;width:44px;height:44px;border:0;
+background:var(--red);color:#fff;border-radius:6px;font-size:1.15rem;cursor:pointer;
+display:grid;place-items:center;opacity:0;visibility:hidden;
+transform:translateY(12px);
+transition:opacity .3s,transform .3s,visibility .3s,background .2s;
+box-shadow:var(--shadow-md);z-index:30}
+.topbtn:hover{background:var(--red-light)}
+.topbtn.show{opacity:1;visibility:visible;transform:translateY(0)}
 
-        .btn-link-menu {
-            color: var(--texto-escuro);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            padding: 0.5rem 0.2rem;
-            border-radius: 4px;
-            background-color: #f1f3f5;
-            transition: all 0.2s ease;
-            text-align: center;
-            border: 1px solid #dee2e6;
-            display: block;
-        }
+/* ==== RESPONSIVO ==== */
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){
+body{font-size:1rem}
+.grid{grid-template-columns:1fr}
+.nominata{columns:1}
+.article{font-size:1rem}
+.topin{padding:1.25rem 1rem 1.5rem}
+.brand{font-size:.6rem;letter-spacing:.14em;margin-bottom:.75rem;
+line-height:1.55}
+.brand::before{display:none}
+.top h1{font-size:clamp(1.6rem,7.5vw,2.1rem);line-height:1.08}
+.top-lead{font-size:.92rem;margin-top:.75rem}
+.top-meta{margin-top:1rem;font-size:.6rem;gap:.3rem .55rem}
+.top-meta span:not(:last-child)::after{display:none}
+.top-meta span{background:rgba(216,170,53,.12);
+border:1px solid rgba(216,170,53,.35);padding:.25rem .55rem;
+border-radius:999px}
+.gallery{grid-template-columns:1fr}
+.lightbox{padding:1rem}
+.lightbox-close{top:.5rem;right:.5rem}
+.footer{padding:1.5rem 1rem}
+.footer strong{font-size:.98rem}
+.footer small{font-size:.66rem}
+}
 
-        .btn-link-menu:hover {
-            background-color: var(--vermelho-principal);
-            color: var(--branco);
-            border-color: var(--vermelho-principal);
-        }
-
-        .btn-link-menu.destaque-aba {
-            background-color: var(--amarelo-ouro);
-            border-color: #e0b400;
-        }
-
-        /* CORPO DO PORTAL */
-        .container-principal {
-            max-width: 750px;
-            margin: 1.2rem auto;
-            padding: 0 0.8rem;
-        }
-
-        .secao-card-editorial {
-            background: var(--branco);
-            padding: 1.5rem 1.2rem;
-            border-radius: 8px;
-            border: 1px solid var(--borda-suave);
-            box-shadow: var(--sombra-card);
-            margin-bottom: 1.5rem;
-            width: 100%;
-        }
-
-        .titulo-secao-portal {
-            color: var(--vermelho-principal);
-            font-size: 1.2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-            border-bottom: 2px solid var(--borda-suave);
-            padding-bottom: 0.3rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .titulo-secao-portal::before {
-            content: '';
-            display: inline-block;
-            width: 4px;
-            height: 18px;
-            background-color: var(--amarelo-ouro);
-            flex-shrink: 0;
-        }
-
-        .meta-sub-dados {
-            font-size: 0.8rem;
-            color: var(--texto-mutado);
-            margin-top: -0.5rem;
-            margin-bottom: 1.2rem;
-            font-style: italic;
-            line-height: 1.4;
-        }
-
-        p.paragrafo-limpo {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            text-align: justify;
-            color: #2b2b2b;
-        }
-
-        .caixa-testemunho-bloco {
-            background-color: #fffdf2;
-            border-left: 4px solid var(--vermelho-principal);
-            padding: 1rem;
-            margin: 1.2rem 0;
-            font-style: italic;
-            font-size: 0.95rem;
-            color: #111111;
-            border-radius: 0 6px 6px 0;
-        }
-
-        /* GALERIA INTEGRADA DE ARQUIVOS */
-        .grade-arquivos-visuais {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-            margin-top: 0.8rem;
-        }
-
-        .card-foto-tecnica {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 8px;
-            padding: 8px;
-        }
-
-        .area-imagem-placeholder {
-            background-color: #f8f9fa;
-            border: 2px dashed var(--vermelho-principal);
-            border-radius: 6px;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .area-imagem-placeholder img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
-
-        .badge-nome-arquivo {
-            background-color: var(--texto-escuro);
-            color: var(--amarelo-ouro);
-            font-family: monospace;
-            font-size: 0.85rem;
-            font-weight: bold;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            margin-bottom: 6px;
-        }
-
-        .legenda-tecnica-sistema {
-            margin-top: 8px;
-            padding-top: 6px;
-            border-top: 1px solid var(--borda-suave);
-            font-size: 0.8rem;
-            color: var(--texto-mutado);
-            text-align: left;
-            line-height: 1.4;
-        }
-
-        .legenda-tecnica-sistema strong {
-            color: var(--vermelho-principal);
-        }
-
-        /* MANIFESTO E LISTAGENS */
-        .categoria-pauta-jornal {
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin: 1rem 0 0.4rem 0;
-            color: var(--vermelho-escuro);
-        }
-
-        .lista-pautas-jornal {
-            list-style: none;
-            margin-bottom: 1rem;
-        }
-
-        .lista-pautas-jornal li {
-            position: relative;
-            padding-left: 1rem;
-            margin-bottom: 0.4rem;
-            font-size: 0.9rem;
-            color: #333333;
-        }
-
-        .lista-pautas-jornal li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--vermelho-principal);
-            font-weight: bold;
-        }
-
-        /* CHAPA 2 NOMINATA */
-        .bloco-cargo-nominata {
-            background: #f8f9fa;
-            padding: 0.8rem;
-            border-radius: 6px;
-            margin-bottom: 0.8rem;
-            border-left: 3px solid var(--amarelo-ouro);
-        }
-
-        .bloco-cargo-nominata h4 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: var(--vermelho-principal);
-            margin-bottom: 0.4rem;
-        }
-
-        .bloco-cargo-nominata ul {
-            list-style: none;
-            font-size: 0.85rem;
-            color: #333333;
-        }
-
-        .bloco-cargo-nominata li {
-            margin-bottom: 0.3rem;
-            border-bottom: 1px dashed #e9ecef;
-            padding-bottom: 2px;
-        }
-
-        /* RODAPÉ INSTITUCIONAL DETALHADO */
-        .rodape-memorial {
-            background-color: #111111;
-            color: #ffffff;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-top: 4px solid var(--vermelho-principal);
-            margin-top: 3rem;
-            font-size: 0.75rem;
-        }
-
-        .rodape-editorial-aviso {
-            color: var(--amarelo-ouro);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 0.6rem;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        .creditos-projeto-tecnico {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #2d2d2d;
-            color: #adb5bd;
-            line-height: 1.5;
-            text-align: center;
-        }
-
-        .creditos-projeto-tecnico span {
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        @media (max-width: 480px) {
-            .topo-editorial h1 { font-size: 1.2rem; }
-            .btn-link-menu { font-size: 0.65rem; padding: 0.4rem 0.1rem; }
-            .secao-card-editorial { padding: 1rem 0.8rem; }
-        }
-    </style>
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation-duration:.01ms!important;
+animation-iteration-count:1!important;transition-duration:.01ms!important;
+scroll-behavior:auto!important}
+}
+@media print{
+.nav,.topbtn,.skip-link,.lightbox{display:none!important}
+body{background:#fff}
+.paper{box-shadow:none;border:1px solid #ccc}
+}
+</style>
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
-    <div class="topo-editorial">
-        <h1>Companheiro Santos, uma história de luta</h1>
+<a class="skip-link" href="#depoimento">Ir para o conteúdo principal</a>
+
+<header class="top">
+  <div class="topin">
+    <div class="brand">Arquivo de memória • Vigilantes de Pernambuco</div>
+    <h1>Companheiro Santos,<br><span class="accent">presente!</span></h1>
+    <p class="top-lead">Memórias da garupa veloz da utopia em Recife — por <strong>Gilson Silva</strong></p>
+    <div class="top-meta">
+      <span>Depoimento</span>
+      <span>Recife · 1993–1994</span>
+      <span>Publicado em 19 set 2026</span>
     </div>
+  </div>
+</header>
 
-    <!-- MENU DO TOPO FUNCIONAL E SEGURO -->
-    <div class="menu-navegacao-topo">
-        <div class="menu-grid-botoes">
-            <a href="#secao-fotos" class="btn-link-menu destaque-aba">🖼️ Fotos</a>
-            <a href="#secao-depoimento" class="btn-link-menu">📖 Texto</a>
-            <a href="#secao-manifesto" class="btn-link-menu">📰 Jornal</a>
-            <a href="#secao-chapa" class="btn-link-menu">👥 Chapa 2</a>
-        </div>
+<nav class="nav" aria-label="Navegação principal">
+  <div class="navin">
+    <a href="#depoimento">Depoimento</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#contexto">Contexto</a>
+    <a href="#lutas">Nossas lutas</a>
+    <a href="#chapa2">Chapa 2</a>
+    <a href="#nominata">Nominata</a>
+    <a href="#apoios">Apoios</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="section" id="depoimento">
+    <h2>Depoimento</h2>
+    <p class="lead">Por Gilson Silva</p>
+    <div class="article">
+      <p>Dizem que a história oficial é escrita apenas nos registros oficiais, mas a verdadeira memória do povo é moldada pelo suor e pela convicção daqueles que nunca recuaram. O Vigilante Santos foi um desses gigantes anônimos para os arquivos institucionais, mas uma figura inesquecível para a categoria de oposição dos vigilantes de Pernambuco e para os companheiros que dividiram com ele as trincheiras da esquerda.</p>
+      <p>Homem de base, líder por natureza e vigilante valente, Santos trazia no peito a firmeza de quem protege a dignidade da classe operária. Na Recife de 1993, quando as bases exigiam voz e vez, lá estava ele na linha de frente da oposição sindical. Não buscava palcos; sua missão era o asfalto, a porta das empresas e o diálogo olho no olho. Santos era a tradução da militância raiz, movida por uma fé inabalável na justiça social e por um amor gigante pela esperança que a campanha de Lula representava.</p>
+      <div class="pullquote">“Na sua garupa, estava eu.”<small>Memória da eleição presidencial de 1994</small></div>
+      <p>Esse amor não andava devagar — ele corria, cortando o vento sobre duas rodas. No dia da eleição presidencial de 1994, quando Lula enfrentava Fernando Henrique Cardoso nas urnas sob o impacto do recém-lançado Plano Real, o peso da responsabilidade histórica estava nas nossas costas. Santos pilotava sua moto como se o próprio futuro dependesse daquela velocidade, rodando Recife de ponta a ponta para fiscalizar a votação.</p>
+      <p>Na sua garupa, estava eu. Eu pertencia aos quadros do PCB (Partido Comunista Brasileiro), mas, na época, nós do partidão estávamos firmes na frente ampla de apoio a Lula.</p>
+      <p>Subir na garupa de Santos era um teste para o coração. Ele corria tanto que o meu medo da velocidade me fez segurar nele com uma força descomunal. Dias depois, nas rodas de conversa, Santos fazia questão de rir e resenhar com todos os companheiros, imitando, em tom de brincadeira, o desespero com que segurei firme na sua cintura. Ríamos juntos, mas sabíamos que aquela adrenalina era o combustível da nossa entrega.</p>
+      <p>Estávamos juntos em uma missão árdua: a luta para derrubar o grupo de Souza da presidência do Sindicato dos Vigilantes de Pernambuco (Sindesv-PE). Queríamos arrancar a entidade das mãos de uma diretoria pelega para devolvê-la aos verdadeiros interesses dos trabalhadores. Infelizmente, naquela época não conseguimos.</p>
+      <p>Os registros oficiais podem silenciar sobre os heróis de base, mas a memória do afeto, da coragem e da verdadeira rebeldia operária é imperecível. O Vigilante Santos permanece vivo no exemplo e na lembrança eterna daquela garupa veloz de 1994, onde um petista e um comunista dividiram o mesmo vento e o mesmo sonho.</p>
+      <p>A caminhada foi dura e a estrutura sindical oficial continua blindada, mas a história não parou e não vai parar nunca, enquanto houver opressor e oprimido, ser antifascista e patrões desumanos é a nossa opção de luta e de vida.</p>
+      <p><strong>Companheiro Santos, presente! A luta continua!</strong></p>
     </div>
+    <div class="source">
+      Texto: Gilson Silva / Gemini.<br>
+      Local e data indicados no documento: Paulista, 19 de setembro de 2026.
+    </div>
+  </section>
 
-    <!-- CORPO CENTRAL -->
-    <div class="container-principal">
+  <section class="section" id="galeria">
+    <h2>Galeria da memória</h2>
+    <p class="lead">Registros da campanha da Chapa 2 e da militância nas ruas do Recife.</p>
+    <div class="gallery">
+      <figure class="gallery-item">
+        <button type="button" class="gallery-trigger" aria-label="Ampliar: Garupa da moto em 1994">
+          <img src="foto-garupa.jpg" alt="Gilson Silva na garupa da moto de Santos em 1994" loading="lazy">
+        </button>
+        <figcaption><strong>Garupa da utopia</strong>1994 — fiscalização da votação, Recife.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <button type="button" class="gallery-trigger" aria-label="Ampliar: Panfleto da Chapa 2">
+          <img src="foto-panfleto.jpg" alt="Panfleto da Chapa 2 — Verdadeira Oposição dos Vigilantes" loading="lazy">
+        </button>
+        <figcaption><strong>Panfleto Chapa 2</strong>“Verdadeira Oposição dos Vigilantes” — 1993.</figcaption>
+      </figure>
+      <figure class="gallery-item">
+        <button type="button" class="gallery-trigger" aria-label="Ampliar: Reunião de base">
+          <img src="foto-reuniao.jpg" alt="Reunião da oposição sindical dos vigilantes" loading="lazy">
+        </button>
+        <figcaption><strong>Reunião de base</strong>Comando Geral, Rua do Príncipe — Recife.</figcaption>
+      </figure>
+    </div>
+  </section>
 
-        <!-- SEÇÃO: ACERVO VISUAL -->
+  <section class="section" id="contexto">
+    <h2>A crise generalizada</h2>
+    <p class="lead">Síntese do documento histórico da campanha</p>
+    <div class="paper">
+      <h3>Contexto socioeconômico</h3>
+      <p>Aponta que o povo brasileiro tem sido forçado pelos governantes a conviver com uma crise económica e social que resulta em milhões de desempregados, arrocho salarial e cargas horárias desumanas, tanto no serviço público como no setor privado.</p>
+      <h4>Crítica ao Governo Itamar</h4>
+      <p>Critica o governo pela política de favorecimento às empresas privadas e por negar aos trabalhadores uma política salarial justa que repasse, no mínimo, a inflação mensal.</p>
+      <h4>Papel do Sindicato</h4>
+      <p>Destaca que o movimento sindical tem o desafio de organizar os trabalhadores na luta por melhores condições de vida e de trabalho, armando a categoria contra os patrões.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Quem é quem nas eleições</h2>
+    <p class="lead">Informações registradas no material histórico</p>
+    <div class="paper">
+      <h3>Data da eleição</h3>
+      <p>Dias 1, 2 e 3 de junho.</p>
+      <h4>Opções de chapas</h4>
+      <ul>
+        <li><strong>Chapa 2 – Verdadeira Oposição dos Vigilantes:</strong> liderada por Santos, delegado sindical da Advance. O documento a apresenta como oposição combatente, apoiada pela CUT e pela maioria do movimento sindical em Pernambuco.</li>
+        <li><strong>Chapa 1:</strong> o documento a classifica como retrato do desmando e do descaso da atual diretoria.</li>
+        <li><strong>Chapa 3:</strong> o documento a associa a acordos “por debaixo do pano” com Souza para benefício próprio.</li>
+      </ul>
+      <div class="notice">As descrições acima são apresentadas como conteúdo do documento histórico, não como verificação independente dos acontecimentos.</div>
+    </div>
+  </section>
+
+  <section class="section" id="lutas">
+    <h2>Nossas lutas</h2>
+    <p class="lead">Pautas econômicas, sindicais, socioculturais e de organização</p>
+    <div class="grid">
+      <div class="box"><h3>Questão econômica</h3><ul>
+        <li>Contra a sonegação do FGTS, fiscalizando todas as empresas;</li>
+        <li>Pela rediscussão com a classe patronal sobre o risco de vida;</li>
+        <li>Para reaver os 5 meses de salário de março a agosto de 1990;</li>
+        <li>Pelo repasse das perdas do Plano Bresser e das URPs;</li>
+        <li>Por reajuste mensal;</li>
+        <li>Pelo ticket refeição;</li>
+        <li>Pelo pagamento quinzenal;</li>
+        <li>Pela entrega dos vales-transporte de uma só vez;</li>
+        <li>Contra o imposto sindical e pelo direito de ser contra a taxa assistencial;</li>
+        <li>Pela jornada de 40 horas semanais.</li>
+      </ul></div>
+      <div class="box"><h3>Questão sindical</h3><ul>
+        <li>Fiscalização sistemática às empresas;</li>
+        <li>Convocação de congressos estaduais dos vigilantes;</li>
+        <li>Participação efetiva dos vigilantes nas atividades da CUT;</li>
+        <li>Aprovação do projeto do Deputado Chico Vigilante sobre a Lei nº 7.102;</li>
+        <li>Denúncia de injustiça e violência contra trabalhadores;</li>
+        <li>Defesa da cidadania;</li>
+        <li>Contra o racismo e pela defesa da luta da mulher trabalhadora;</li>
+        <li>Pelo fim do militarismo nas empresas.</li>
+      </ul></div>
+      <div class="box"><h3>Questão sociocultural e educacional</h3><ul>
+        <li>Convênio com a Secretaria de Educação para ensino supletivo;</li>
+        <li>Convênio com o SENAC para cursos profissionalizantes;</li>
+        <li>Cursos de formação sindical;</li>
+        <li>Discussão sobre convênios para atendimento médico;</li>
+        <li>Plantão de 24 horas, inclusive fins de semana.</li>
+      </ul></div>
+      <div class="box"><h3>Estrutura e organização</h3><ul>
+        <li>Fortalecimento do Departamento Jurídico;</li>
+        <li>Reuniões mensais da diretoria abertas aos vigilantes;</li>
+        <li>Microsistema de computação para agilizar atendimento;</li>
+        <li>Gráfica interna para jornal e panfletos;</li>
+        <li>Fim da mordomia, deixando carros do sindicato na garagem nos fins de semana;</li>
+        <li>Direção colegiada.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <section class="section" id="chapa2">
+    <h2>Chapa 2 — Mudar para Avançar</h2>
+    <p class="lead">Informações preservadas do material histórico</p>
+    <div class="paper">
+      <h3>Quem faz parte da Chapa 2</h3>
+      <p>O documento apresenta a Chapa 2 como alternativa de oposição e menciona Santos, Grimaldo e Romualdo, eleitos delegados sindicais em suas empresas, além de apoios de sindicatos de vigilantes de outros estados.</p>
+      <h4>Ilustração central</h4>
+      <p>No centro do panfleto encontra-se uma ilustração acompanhada da frase de ordem: <strong>“VOTE CHAPA 2”</strong></p>
+      <p>O documento registra: “Essa logomarca foi criado por Gilson Silva (PCB).”</p>
+    </div>
+  </section>
+
+  <section class="section" id="nominata">
+    <h2>Nominata da direção</h2>
+    <p class="lead">“Veja quem são os companheiros que vão assumir a diretoria do sindicato” — título registrado no documento.</p>
+    <div class="paper nominata">
+      <p><strong>Emerson Gonçalves dos Santos</strong> — Presidente (Advance)</p>
+      <p>Josinaldo Silva Medeiros — Dir. Administrativo e de Sec. (Liserve)</p>
+      <p>Edilson Alves Gama — Dir. Beneficiente (Nordeste)</p>
+      <p>Geraldo Alves da Silva — Dir. de Finanças (Spev. Norte)</p>
+      <p>José Risonildo Rodrigues — Dir. Comunicação Social e Imprensa (Nordeste)</p>
+      <p>Jailton Vieira da Silva — Dir. de Património (Selen)</p>
+      <p>Grimauro Barbosa da Silva — Dir. de Assuntos Sindicais (Nordeste)</p>
+      <p><strong>Diretoria Adjunta:</strong> Jorgival R. Xavier; Noel Amâncio Soares; Valmir Ferreira dos Santos; Cleonildo Souza Siqueira; Sérgio A. dos Santos; Edmilson F. da Silva; Romualdo da S. Gonçalves; Grivaldo U. Leite; Valdir Luiz da Silva; Joselias A. da Silva.</p>
+      <p><strong>Suplentes:</strong> Walter Marcolino da Silva; Elias Costa dos Santos; Giovanne Lúcio Gomes; Fernando C. de Oliveira; Marcelo M. do Rego Barros; Eraldo Hélio de Santana; Djalma Gomes da Silva; Djalma S. de Freitas; Manoel B. de S. Sobrinho; Hugo Santos dos Prazeres; José Fernando de Carvalho; Isaac José Costa; José Raimundo de, Filho; Otávio Félix F. Neto; José Gomes Nogueira; Jairo da Silva Lauro; Jamesson J. dos Santos.</p>
+      <p><strong>Representantes da Federação:</strong> Marconi Cardoso Lins; José António Tenório. Suplentes: Edesio José da Silva; Severino D. dos Santos Filho.</p>
+      <p><strong>Conselho Fiscal:</strong> Severino Lourenço Alves; Gilson Xavier de Oliveira; Sandoval Francisco Chaves. Suplentes: Edvaldo dos Anjos; Lupércio da Silva; Josias Lopes Pereira.</p>
+    </div>
+  </section>
+
+  <section class="section" id="apoios">
+    <h2>Sindicatos e sindicalistas que apoiam</h2>
+    <p class="lead">Lista registrada no documento</p>
+    <div class="paper">
+      <div class="grid">
+        <div><ul>
+          <li>CUT – Central Única dos Trabalhadores</li>
+          <li>SINTEPE</li>
+          <li>SINDBORRACHA</li>
+          <li>SINDPD</li>
+          <li>STR Petrolândia</li>
+          <li>STR Surubim</li>
+          <li>Sindicato dos Comerciários de Caruaru</li>
+          <li>CINDSEP</li>
+          <li>SINDSEPPE</li>
+          <li>SINTTEL</li>
+          <li>Sindicato dos Gráficos</li>
+          <li>STI do Açúcar</li>
+        </ul></div>
+        <div><ul>
+          <li>Sindicato dos Bancários</li>
+          <li>Sindicato dos Ferroviários</li>
+          <li>Sindicato dos Vigilantes do Distrito Federal</li>
+          <li>Sindicato dos Vigilantes da Bahia</li>
+          <li>SINPRO</li>
+          <li>Sindicato dos Trabalhadores nos Correios</li>
+          <li>STR Serra Talhada</li>
+          <li>STR Itapetim</li>
+          <li>STR Ouricuri</li>
+          <li>SISEPE</li>
+          <li>Sindicato dos Jornalistas</li>
+          <li>SINDSPREV</li>
+          <li>Sindicato dos Aeroviários</li>
+          <li>Sindicato dos Radialistas</li>
+          <li>Sindicato da Construção Civil de Jaboatão</li>
+          <li>Sindicato dos Bancários de Caruaru</li>
+          <li>Chico Vigilante – Deputado Federal</li>
+        </ul></
