@@ -29,6 +29,9 @@ text-decoration:none}
 .skip-link:focus{left:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
+/* ============================================================
+   CABEÇALHO
+   ============================================================ */
 .top{background:var(--dark);color:#fff;border-bottom:4px solid var(--gold);
 position:relative;overflow:hidden}
 .top::before{content:"";position:absolute;inset:0;pointer-events:none;
@@ -36,7 +39,7 @@ background-image:
 radial-gradient(circle at 15% 20%,rgba(216,170,53,.08) 0%,transparent 45%),
 radial-gradient(circle at 85% 80%,rgba(178,30,43,.15) 0%,transparent 50%)}
 .topin{max-width:var(--max);margin:0 auto;
-padding:clamp(1.5rem,4vw,3rem) clamp(1rem,3vw,2rem);
+padding:clamp(1.75rem,4.5vw,3.5rem) clamp(1rem,3vw,2rem);
 position:relative;z-index:1;overflow:hidden}
 .brand{font-family:var(--font-sans);font-weight:700;font-size:.68rem;
 letter-spacing:.18em;text-transform:uppercase;color:var(--gold);
@@ -58,11 +61,33 @@ letter-spacing:.1em;text-transform:uppercase;color:#a9a29a}
 .top-meta span:not(:last-child)::after{content:"•";color:var(--gold);
 margin-left:.8rem;opacity:.7}
 
+/* MINI-GALERIA no cabeçalho */
+.top-thumbs{margin-top:1.75rem;display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:.75rem;max-width:560px}
+.top-thumb{margin:0;background:rgba(216,170,53,.06);
+border:1px solid rgba(216,170,53,.4);border-radius:6px;
+overflow:hidden;cursor:zoom-in;padding:0;
+transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+line-height:0}
+.top-thumb:hover,.top-thumb:focus-visible{
+transform:translateY(-3px);border-color:var(--gold);
+box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.top-thumb img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+filter:sepia(.15) contrast(1.02);
+transition:filter .3s ease}
+.top-thumb:hover img{filter:sepia(0) contrast(1.08)}
+.top-thumb-label{display:none}
+
+/* ============================================================
+   NAVEGAÇÃO
+   ============================================================ */
 .nav{position:sticky;top:0;z-index:20;
-background:rgba(251,247,239,.92);
+background:rgba(251,247,239,.94);
 -webkit-backdrop-filter:saturate(180%) blur(12px);
 backdrop-filter:saturate(180%) blur(12px);
-border-bottom:1px solid var(--line)}
+border-bottom:1px solid var(--line);
+box-shadow:0 1px 0 rgba(0,0,0,.02)}
 .navin{max-width:var(--max);margin:0 auto;
 padding:.6rem clamp(1rem,2.5vw,1.5rem);display:flex;gap:.5rem;
 overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
@@ -70,15 +95,18 @@ overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
 .nav a{font-family:var(--font-sans);font-weight:700;font-size:.68rem;
 text-decoration:none;text-transform:uppercase;letter-spacing:.08em;
 padding:.55rem .85rem;border:1px solid var(--line);border-radius:4px;
-white-space:nowrap;background:#fff;
+white-space:nowrap;background:#fff;cursor:pointer;
 transition:background .2s,color .2s,border-color .2s,transform .2s}
 .nav a:hover,.nav a:focus-visible{background:var(--red);color:#fff;
 border-color:var(--red);transform:translateY(-1px)}
 
+/* ============================================================
+   CONTEÚDO
+   ============================================================ */
 main{max-width:var(--max);margin:0 auto;
 padding:clamp(1.75rem,3.5vw,2.5rem) clamp(1.15rem,3vw,1.5rem) 3.5rem}
 .section{padding:clamp(2rem,4.5vw,3.5rem) 0;
-border-bottom:1px solid var(--line);scroll-margin-top:4rem}
+border-bottom:1px solid var(--line);scroll-margin-top:5rem}
 .section:last-of-type{border-bottom:none}
 .section h2{font-size:clamp(1.5rem,2.8vw,2.05rem);color:var(--red);
 line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
@@ -125,7 +153,9 @@ line-height:1.55}
 border-top:1px solid var(--line);margin-top:1.75rem;padding-top:1rem;
 line-height:1.7}
 
-/* GALERIA — fotos inteiras, sem corte */
+/* ============================================================
+   GALERIA
+   ============================================================ */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;
 margin-top:1.25rem}
 .gallery-item{margin:0;background:#fff;border:1px solid var(--line);
@@ -134,11 +164,9 @@ display:flex;flex-direction:column}
 .gallery-item:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
 .gallery-trigger{display:block;width:100%;padding:0;border:0;
 background:var(--paper-2);cursor:zoom-in;line-height:0;
-display:flex;align-items:center;justify-content:center;
-min-height:220px}
+display:flex;align-items:center;justify-content:center;min-height:220px}
 .gallery-trigger img{width:100%;height:auto;max-height:420px;
-object-fit:contain;
-filter:sepia(.12) contrast(1.03);
+object-fit:contain;filter:sepia(.12) contrast(1.03);
 transition:filter .4s,transform .5s}
 .gallery-item:hover img{filter:sepia(0) contrast(1.08);transform:scale(1.02)}
 .gallery-item figcaption{padding:.9rem 1rem 1rem;
@@ -147,6 +175,9 @@ color:var(--muted);margin-top:auto}
 .gallery-item figcaption strong{display:block;color:var(--red);
 font-size:.82rem;margin-bottom:.25rem;letter-spacing:.02em}
 
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(15,12,10,.94);
 display:grid;place-items:center;padding:2rem;
 -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
@@ -162,12 +193,18 @@ font-size:1.5rem;line-height:1;border-radius:50%;cursor:pointer;
 display:grid;place-items:center;transition:background .2s,transform .2s}
 .lightbox-close:hover{background:var(--red);transform:rotate(90deg)}
 
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
 .footer{background:var(--dark);color:#ddd;padding:2rem 1.25rem;text-align:center;
 border-top:4px solid var(--gold)}
 .footer strong{color:#fff;font-size:1.1rem;display:block;margin-bottom:.4rem}
 .footer small{color:#a9a29a;font-family:var(--font-sans);font-size:.72rem;
 letter-spacing:.03em;line-height:1.6;display:block;max-width:44ch;margin:0 auto}
 
+/* ============================================================
+   BOTÃO TOPO
+   ============================================================ */
 .topbtn{position:fixed;right:1.1rem;bottom:1.1rem;width:44px;height:44px;border:0;
 background:var(--red);color:#fff;border-radius:6px;font-size:1.15rem;cursor:pointer;
 display:grid;place-items:center;opacity:0;visibility:hidden;
@@ -177,13 +214,16 @@ box-shadow:var(--shadow-md);z-index:30}
 .topbtn:hover{background:var(--red-light)}
 .topbtn.show{opacity:1;visibility:visible;transform:translateY(0)}
 
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
 @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){
 body{font-size:1rem}
 .grid{grid-template-columns:1fr}
 .nominata{columns:1}
 .article{font-size:1rem}
-.topin{padding:1.25rem 1rem 1.5rem}
+.topin{padding:1.35rem 1rem 1.5rem}
 .brand{font-size:.6rem;letter-spacing:.14em;margin-bottom:.75rem;
 line-height:1.55}
 .brand::before{display:none}
@@ -194,6 +234,7 @@ line-height:1.55}
 .top-meta span{background:rgba(216,170,53,.12);
 border:1px solid rgba(216,170,53,.35);padding:.25rem .55rem;
 border-radius:999px}
+.top-thumbs{margin-top:1.25rem;gap:.5rem;max-width:100%}
 .gallery{grid-template-columns:1fr}
 .gallery-trigger{min-height:180px}
 .lightbox{padding:1rem}
@@ -225,10 +266,23 @@ body{background:#fff}
     <div class="brand">Arquivo de memória • Vigilantes de Pernambuco</div>
     <h1>Companheiro Santos,<br><span class="accent">presente!</span></h1>
     <p class="top-lead">Memórias da garupa veloz da utopia em Recife — por <strong>Gilson Silva</strong></p>
+
     <div class="top-meta">
       <span>Depoimento</span>
       <span>Recife · 1993–1994</span>
       <span>Publicado em 19 set 2026</span>
+    </div>
+
+    <div class="top-thumbs" aria-label="Prévia das fotos da galeria">
+      <button type="button" class="top-thumb gallery-trigger" aria-label="Ampliar: Grupo da Oposição dos Vigilantes">
+        <img src="foto-garupa.jpg" alt="Grupo da Oposição dos Vigilantes com os punhos erguidos">
+      </button>
+      <button type="button" class="top-thumb gallery-trigger" aria-label="Ampliar: Grupo da Oposição (versão restaurada)">
+        <img src="foto-panfleto.jpg" alt="Grupo da Oposição — versão restaurada por IA">
+      </button>
+      <button type="button" class="top-thumb gallery-trigger" aria-label="Ampliar: Logomarca da Oposição dos Vigilantes">
+        <img src="foto-reuniao.jpg" alt="Logomarca da Oposição dos Vigilantes — VOTE CHAPA 2">
+      </button>
     </div>
   </div>
 </header>
@@ -401,48 +455,4 @@ body{background:#fff}
       <p>Geraldo Alves da Silva — Dir. de Finanças (Spev. Norte)</p>
       <p>José Risonildo Rodrigues — Dir. Comunicação Social e Imprensa (Nordeste)</p>
       <p>Jailton Vieira da Silva — Dir. de Património (Selen)</p>
-      <p>Grimauro Barbosa da Silva — Dir. de Assuntos Sindicais (Nordeste)</p>
-      <p><strong>Diretoria Adjunta:</strong> Jorgival R. Xavier; Noel Amâncio Soares; Valmir Ferreira dos Santos; Cleonildo Souza Siqueira; Sérgio A. dos Santos; Edmilson F. da Silva; Romualdo da S. Gonçalves; Grivaldo U. Leite; Valdir Luiz da Silva; Joselias A. da Silva.</p>
-      <p><strong>Suplentes:</strong> Walter Marcolino da Silva; Elias Costa dos Santos; Giovanne Lúcio Gomes; Fernando C. de Oliveira; Marcelo M. do Rego Barros; Eraldo Hélio de Santana; Djalma Gomes da Silva; Djalma S. de Freitas; Manoel B. de S. Sobrinho; Hugo Santos dos Prazeres; José Fernando de Carvalho; Isaac José Costa; José Raimundo de, Filho; Otávio Félix F. Neto; José Gomes Nogueira; Jairo da Silva Lauro; Jamesson J. dos Santos.</p>
-      <p><strong>Representantes da Federação:</strong> Marconi Cardoso Lins; José António Tenório. Suplentes: Edesio José da Silva; Severino D. dos Santos Filho.</p>
-      <p><strong>Conselho Fiscal:</strong> Severino Lourenço Alves; Gilson Xavier de Oliveira; Sandoval Francisco Chaves. Suplentes: Edvaldo dos Anjos; Lupércio da Silva; Josias Lopes Pereira.</p>
-    </div>
-  </section>
-
-  <section class="section" id="apoios">
-    <h2>Sindicatos e sindicalistas que apoiam</h2>
-    <p class="lead">Lista registrada no documento</p>
-    <div class="paper">
-      <div class="grid">
-        <div><ul>
-          <li>CUT – Central Única dos Trabalhadores</li>
-          <li>SINTEPE</li>
-          <li>SINDBORRACHA</li>
-          <li>SINDPD</li>
-          <li>STR Petrolândia</li>
-          <li>STR Surubim</li>
-          <li>Sindicato dos Comerciários de Caruaru</li>
-          <li>CINDSEP</li>
-          <li>SINDSEPPE</li>
-          <li>SINTTEL</li>
-          <li>Sindicato dos Gráficos</li>
-          <li>STI do Açúcar</li>
-        </ul></div>
-        <div><ul>
-          <li>Sindicato dos Bancários</li>
-          <li>Sindicato dos Ferroviários</li>
-          <li>Sindicato dos Vigilantes do Distrito Federal</li>
-          <li>Sindicato dos Vigilantes da Bahia</li>
-          <li>SINPRO</li>
-          <li>Sindicato dos Trabalhadores nos Correios</li>
-          <li>STR Serra Talhada</li>
-          <li>STR Itapetim</li>
-          <li>STR Ouricuri</li>
-          <li>SISEPE</li>
-          <li>Sindicato dos Jornalistas</li>
-          <li>SINDSPREV</li>
-          <li>Sindicato dos Aeroviários</li>
-          <li>Sindicato dos Radialistas</li>
-          <li>Sindicato da Construção Civil de Jaboatão</li>
-          <li>Sindicato dos Bancários de Caruaru</li>
-          <li>Chico Vigilante –
+      <p>Grimauro Barbosa da Silva —
