@@ -35,9 +35,7 @@ text-decoration:none}
 .skip-link:focus{left:0}
 :focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-/* ============================================================
-   CABEÇALHO — bordô profundo
-   ============================================================ */
+/* CABEÇALHO */
 .top{background:
 linear-gradient(135deg,var(--bordo-2) 0%,var(--bordo) 55%,var(--bordo-3) 100%);
 color:#fff;position:relative;overflow:hidden}
@@ -50,27 +48,22 @@ background:linear-gradient(90deg,var(--gold) 0%,var(--gold-2) 50%,var(--gold) 10
 .topin{max-width:var(--max);margin:0 auto;position:relative;z-index:1;
 padding:clamp(2.25rem,5vw,4rem) clamp(1.25rem,3vw,2rem)
        clamp(1.75rem,3.5vw,2.5rem)}
-
 .brand{font-family:var(--font-sans);font-weight:700;font-size:.7rem;
 letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);
 display:inline-block;margin-bottom:1.35rem;line-height:1.5}
 .brand::before{content:"";display:inline-block;width:28px;height:2px;
 background:var(--gold-2);vertical-align:middle;margin-right:.75rem;
 transform:translateY(-2px)}
-
 .top h1{font-size:clamp(2rem,6vw,4rem);line-height:1.04;margin:0;
 font-weight:400;letter-spacing:-.02em;text-wrap:balance;max-width:16ch;
 color:#fff;text-shadow:0 1px 0 rgba(0,0,0,.15)}
 .top h1 .accent{color:var(--gold-2);font-style:italic;
 text-shadow:0 1px 0 rgba(0,0,0,.25)}
-
 .top-lead{margin-top:1.25rem;color:rgba(255,255,255,.78);font-style:italic;
 font-size:clamp(.98rem,1.5vw,1.1rem);max-width:52ch;line-height:1.65}
 .top-lead strong{color:var(--gold-2);font-style:normal;font-weight:700}
 
-/* ============================================================
-   NAVEGAÇÃO
-   ============================================================ */
+/* NAVEGAÇÃO */
 .nav{position:sticky;top:0;z-index:20;
 background:var(--cream);
 border-bottom:2px solid var(--gold);
@@ -88,9 +81,7 @@ transition:color .2s,border-color .2s,background .2s}
 .nav a:hover,.nav a:focus-visible{color:var(--gold);
 border-color:var(--gold);background:rgba(201,146,46,.08)}
 
-/* ============================================================
-   CONTEÚDO
-   ============================================================ */
+/* CONTEÚDO */
 main{max-width:var(--max);margin:0 auto;
 padding:0 clamp(1.25rem,3vw,2rem) 3rem}
 .section{padding:clamp(2.5rem,5vw,4rem) 0;
@@ -161,16 +152,27 @@ transition:color .2s,background .2s,border-color .2s,gap .2s}
 color:#fff;background:var(--bordo);border-color:var(--bordo);gap:.8rem}
 .back-top::before{content:"↑";font-size:1rem;line-height:1}
 
-/* ============================================================
-   GALERIA — fotos soltas
-   ============================================================ */
+/* BOTÃO DE E-MAIL (contribuir) */
+.mail-btn{display:inline-flex;align-items:center;gap:.6rem;
+background:var(--bordo);color:#fff;padding:.9rem 1.6rem;
+border-radius:4px;text-decoration:none;
+font-family:var(--font-sans);font-weight:700;font-size:.85rem;
+text-transform:uppercase;letter-spacing:.08em;
+transition:background .2s,transform .2s;
+box-shadow:0 6px 18px rgba(90,10,20,.25)}
+.mail-btn:hover,.mail-btn:focus-visible{
+background:var(--bordo-2);transform:translateY(-2px);
+box-shadow:0 10px 24px rgba(90,10,20,.35)}
+.mail-addr{font-family:var(--font-sans);font-weight:700;
+color:var(--bordo);word-break:break-all;font-size:1.05rem}
+
+/* GALERIA */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem;
 margin-top:1.5rem}
 .gallery-item{margin:0;display:flex;flex-direction:column}
 .gallery-trigger{display:block;width:100%;padding:0;border:0;
 background:transparent;cursor:zoom-in;line-height:0;
-overflow:hidden;
-transition:transform .4s ease}
+overflow:hidden;transition:transform .4s ease}
 .gallery-trigger img{width:100%;height:auto;
 box-shadow:0 8px 24px rgba(90,40,20,.18);
 transition:box-shadow .4s ease,transform .5s ease}
@@ -183,9 +185,7 @@ color:var(--muted)}
 font-size:.88rem;margin-bottom:.3rem;letter-spacing:.01em;
 font-weight:700}
 
-/* ============================================================
-   LIGHTBOX
-   ============================================================ */
+/* LIGHTBOX */
 .lightbox{position:fixed;inset:0;z-index:100;
 background:rgba(30,8,10,.96);
 display:grid;place-items:center;padding:2rem;
@@ -202,9 +202,7 @@ font-size:1.5rem;line-height:1;border-radius:50%;cursor:pointer;
 display:grid;place-items:center;transition:background .2s,transform .2s}
 .lightbox-close:hover{background:var(--bordo);transform:rotate(90deg)}
 
-/* ============================================================
-   RODAPÉ
-   ============================================================ */
+/* RODAPÉ */
 .footer{background:
 linear-gradient(135deg,var(--bordo-2) 0%,var(--bordo) 100%);
 color:#f0e2c6;padding:2.5rem 1.25rem;text-align:center;
@@ -217,12 +215,11 @@ margin-bottom:.5rem;font-weight:700;position:relative}
 font-size:.72rem;letter-spacing:.04em;line-height:1.7;
 display:block;max-width:48ch;margin:0 auto;position:relative}
 
-/* ============================================================
-   BOTÃO FLUTUANTE TOPO
-   ============================================================ */
-.topbtn{position:fixed;right:1.1rem;bottom:1.1rem;width:44px;height:44px;border:2px solid var(--gold);
-background:var(--bordo);color:#fff;border-radius:50%;font-size:1.15rem;cursor:pointer;
-display:grid;place-items:center;opacity:0;visibility:hidden;
+/* BOTÃO FLUTUANTE TOPO */
+.topbtn{position:fixed;right:1.1rem;bottom:1.1rem;width:44px;height:44px;
+border:2px solid var(--gold);
+background:var(--bordo);color:#fff;border-radius:50%;font-size:1.15rem;
+cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;
 transform:translateY(12px);
 transition:opacity .3s,transform .3s,visibility .3s,background .2s;
 box-shadow:0 6px 22px rgba(90,10,20,.35);z-index:30}
@@ -230,9 +227,7 @@ box-shadow:0 6px 22px rgba(90,10,20,.35);z-index:30}
 .topbtn.show{opacity:1;visibility:visible;transform:translateY(0)}
 .topbtn.show:hover{transform:translateY(-2px)}
 
-/* ============================================================
-   RESPONSIVO
-   ============================================================ */
+/* RESPONSIVO */
 @media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:640px){
 body{font-size:1rem}
@@ -255,6 +250,8 @@ main{padding:0 1.15rem 2rem}
 .footer strong{font-size:.98rem}
 .footer small{font-size:.68rem}
 .back-top{font-size:.7rem;padding:.55rem 1rem}
+.mail-btn{font-size:.75rem;padding:.75rem 1.2rem}
+.mail-addr{font-size:.9rem}
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -264,7 +261,7 @@ animation-iteration-count:1!important;transition-duration:.01ms!important;
 scroll-behavior:auto!important}
 }
 @media print{
-.nav,.topbtn,.skip-link,.lightbox,.back-top{display:none!important}
+.nav,.topbtn,.skip-link,.lightbox,.back-top,.mail-btn{display:none!important}
 body{background:#fff}
 }
 </style>
@@ -294,6 +291,7 @@ body{background:#fff}
     <a href="#lutas">Nossas lutas</a>
     <a href="#chapa2">Chapa 2</a>
     <a href="#nominata">Nominata</a>
+    <a href="#contribuir">Contribuir</a>
     <a href="#apoios">Apoios</a>
   </div>
 </nav>
@@ -469,6 +467,42 @@ body{background:#fff}
     <button type="button" class="back-top" data-top>Voltar ao início</button>
   </section>
 
+  <section class="section" id="contribuir">
+    <h2>Deixe sua lembrança do Santos</h2>
+    <p class="lead">Este espaço é para quem conviveu com o Vigilante Santos.</p>
+
+    <div class="article">
+      <p>
+        Conheceu o camarada Santos? Trabalhou com ele? Tem uma foto, um causo,
+        uma história ou uma palavra que merece ser guardada? Sua lembrança
+        ajuda a preservar a memória dele e da luta dos vigilantes de Pernambuco.
+      </p>
+
+      <p style="margin-top:1.5rem;margin-bottom:.5rem">
+        <strong>Envie sua contribuição para:</strong>
+      </p>
+
+      <p class="mail-addr" style="margin:0 0 1.25rem 0">
+        gilson2121@gmail.com
+      </p>
+
+      <p>
+        <a class="mail-btn"
+           href="mailto:gilson2121@gmail.com?subject=Lembran%C3%A7a%20do%20camarada%20Santos&body=Ol%C3%A1%2C%20Gilson!%0A%0AMinha%20lembran%C3%A7a%20do%20camarada%20Santos%3A%0A%0A">
+          ✉️ Enviar lembrança por e-mail
+        </a>
+      </p>
+
+      <p style="font-size:.92rem;color:var(--muted);font-style:italic;margin-top:1.75rem">
+        Aceito textos, fotos ou áudios. Se sua contribuição tiver foto, é só
+        anexar no e-mail. Obrigado por participar — cada lembrança ajuda a
+        manter viva a história do Santos e da luta dos vigilantes.
+      </p>
+    </div>
+
+    <button type="button" class="back-top" data-top>Voltar ao início</button>
+  </section>
+
   <section class="section" id="apoios">
     <h2>Sindicatos e sindicalistas que apoiam</h2>
     <p class="lead">Lista registrada no documento</p>
@@ -543,9 +577,7 @@ body{background:#fff}
 </div>
 
 <script>
-/* ============================================================
-   MENU — rolagem suave
-   ============================================================ */
+/* MENU — rolagem suave */
 document.querySelectorAll('.nav a').forEach(link => {
   link.addEventListener('click', e => {
     const id = link.getAttribute('href');
@@ -560,9 +592,7 @@ document.querySelectorAll('.nav a').forEach(link => {
   });
 });
 
-/* ============================================================
-   BOTÃO "VOLTAR AO INÍCIO" — em cada seção
-   ============================================================ */
+/* BOTÃO "VOLTAR AO INÍCIO" em cada seção */
 document.querySelectorAll('[data-top]').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
@@ -571,18 +601,14 @@ document.querySelectorAll('[data-top]').forEach(btn => {
   });
 });
 
-/* ============================================================
-   BOTÃO FLUTUANTE TOPO
-   ============================================================ */
+/* BOTÃO FLUTUANTE TOPO */
 const b = document.getElementById('top');
 window.addEventListener('scroll', () => {
   b.classList.toggle('show', window.scrollY > 500);
 });
 b.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-/* ============================================================
-   LIGHTBOX
-   ============================================================ */
+/* LIGHTBOX */
 const lightbox = document.getElementById('lightbox');
 const lbImg = lightbox.querySelector('.lightbox-img');
 const lbClose = lightbox.querySelector('.lightbox-close');
